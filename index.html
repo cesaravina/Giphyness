@@ -20,18 +20,33 @@
 	<div class="row" id="xButtons"></div>
 	<div class="row">
 		<form id="x-form">
-		<label for="x-input">Choose Your X-Man</label>
-		<input type="text" id="x-input"><br>
+			<label for="x-input">Choose Your X-Man</label>
+			<input type="text" id="x-input"><br>
 
-		<input type="image" src="assets/images/x.jpg" id="addXMan" value="Add the X Men">
+			<input type="image" src="assets/images/x.jpg" id="addXMan" value="Add the X Men">
+		<!-- Make sure to add closing tags. Many modern browsers will attempt to do this for you, but you don't want to rely on that. -->
+		</form>
 	</div>
 	<div class="row" id="xGifs">
 		
 	</div>
 
 </div>
+<!-- 
+	Heroku is served over https (you can think of that as standing for `http secure`),
+	so in order to load external scripts on Heroku, you need to ensure that the protocol is set 
+	to https.
+
+	If you don't set the protocol at all, then the script will be loaded with whichever
+	protocol the html is being served with.
+
+	In the case of simply opening the file in your browser, the protocol will be set to `file`
+	which will fail for this script since you don't have the jquery source code in the repo
+	(you don't want to have it here, either).
+-->
+<!-- In the case of the jQuery library, you can fix this issue by adding `https:` to the script below -->
 <script
-  src="//code.jquery.com/jquery-3.1.1.js"
+  src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous"></script>
 <script src="assets/javascript/app.js"></script>
